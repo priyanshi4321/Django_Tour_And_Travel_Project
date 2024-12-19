@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">home page</h1>
+    
+    <hr color="aqua">
+    <h1>Hello {{ user }}</h1>
+    <h3>mail: {{email}}</h3>
+    <h1>marks:{{marks.0}}</h1>
+    <h1>marks:{{marks.1}}</h1>
+    <h1>marks:{{marks.2}}</h1>
+    <ul>
+        {% for ele in marks %}
+        <li>
+            {{ele}}
+        </li>
+        {% endfor %}
+    </ul>
+    <section>
+        <form method="POST">
+            {% csrf_token %}
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        enter name
+                    </td>
+                    <td>
+                        <input type="text" name="unm">
+                    </td>
+                
+                </tr>
+                <tr>
+                    <td>
+                        password
+                    </td>
+                    <td>
+                        <input type="password" name="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="subBtn">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </section>
+</body>
+</html>
